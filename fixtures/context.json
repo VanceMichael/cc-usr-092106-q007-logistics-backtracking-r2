@@ -1,0 +1,10 @@
+{
+  "domain": "logistics-backtracking",
+  "version": 1,
+  "facts": [
+    "案件链条包含跨省物流",
+    "药品经仓库归集后通过快递外运",
+    "物流信息用于逐步还原犯罪链条"
+  ],
+  "sample_id": "sample-007"
+}
