@@ -1,0 +1,414 @@
+{
+  "_comment": "跨省药品物流倒查虚构案例：人物、昵称、手机号、地址、承运方与单号均为虚构。",
+  "authorizations": [
+    {
+      "auth_id": "AUTH-01",
+      "case_id": "CASE-2026-031",
+      "team_id": "team-dongjiang",
+      "carriers": ["SSD"],
+      "categories": ["waybill", "scan", "weight", "vehicle", "address_alias"],
+      "valid_from": "2026-01-01T00:00:00+08:00",
+      "valid_to": "2026-12-31T23:59:59+08:00",
+      "waybill_numbers": ["SSD-W001", "SSD-W005"]
+    },
+    {
+      "auth_id": "AUTH-02",
+      "case_id": "CASE-2026-031",
+      "team_id": "team-dongjiang",
+      "carriers": ["JYT"],
+      "categories": ["waybill", "scan", "weight", "box", "vehicle", "address_alias"],
+      "valid_from": "2026-01-01T00:00:00+08:00",
+      "valid_to": "2026-12-31T23:59:59+08:00",
+      "waybill_numbers": ["JYT-W002", "JYT-W003"]
+    }
+  ],
+  "receipts": [
+    {
+      "receipt_id": "RC-SSD-W001",
+      "auth_id": "AUTH-01",
+      "carrier": "SSD",
+      "waybill_no": "SSD-W001",
+      "requested_at": "2026-03-10T09:00:00+08:00",
+      "received_at": "2026-03-12T15:00:00+08:00",
+      "categories": ["waybill", "scan", "weight", "vehicle", "address_alias"],
+      "responder": "SSD-对公接口-虚构代号K7"
+    },
+    {
+      "receipt_id": "RC-SSD-W005",
+      "auth_id": "AUTH-01",
+      "carrier": "SSD",
+      "waybill_no": "SSD-W005",
+      "requested_at": "2026-03-10T09:05:00+08:00",
+      "received_at": "2026-03-12T15:10:00+08:00",
+      "categories": ["waybill", "scan", "weight", "vehicle", "address_alias"],
+      "responder": "SSD-对公接口-虚构代号K7"
+    },
+    {
+      "receipt_id": "RC-JYT-W002",
+      "auth_id": "AUTH-02",
+      "carrier": "JYT",
+      "waybill_no": "JYT-W002",
+      "requested_at": "2026-03-11T10:00:00+08:00",
+      "received_at": "2026-03-13T11:00:00+08:00",
+      "categories": ["waybill", "scan", "weight", "box", "vehicle"],
+      "responder": "JYT-协查窗口-虚构代号Q2"
+    },
+    {
+      "receipt_id": "RC-JYT-BOX",
+      "auth_id": "AUTH-02",
+      "carrier": "JYT",
+      "waybill_no": "JYT-W002",
+      "requested_at": "2026-03-11T10:05:00+08:00",
+      "received_at": "2026-03-13T11:20:00+08:00",
+      "categories": ["box"],
+      "responder": "JYT-协查窗口-虚构代号Q2"
+    },
+    {
+      "receipt_id": "RC-JYT-W003",
+      "auth_id": "AUTH-02",
+      "carrier": "JYT",
+      "waybill_no": "JYT-W003",
+      "requested_at": "2026-03-11T10:10:00+08:00",
+      "received_at": "2026-03-13T11:30:00+08:00",
+      "categories": ["waybill", "scan", "box", "vehicle"],
+      "responder": "JYT-协查窗口-虚构代号Q2"
+    }
+  ],
+  "address_aliases": [
+    {
+      "code": "AD-9",
+      "version": 1,
+      "address_text": "东江省临川市城郊工业园3号仓（虚构地址）",
+      "valid_from": "2026-01-01T00:00:00+08:00",
+      "valid_to": null,
+      "source_receipt_id": "RC-SSD-W001"
+    },
+    {
+      "code": "AD-21",
+      "version": 1,
+      "address_text": "西林省望州市城北批发市场B区17号（虚构地址）",
+      "valid_from": "2026-01-01T00:00:00+08:00",
+      "valid_to": null,
+      "source_receipt_id": "RC-SSD-W001"
+    }
+  ],
+  "waybill_versions": [
+    {
+      "waybill_no": "SSD-W001",
+      "carrier": "SSD",
+      "version_no": 1,
+      "revision_reason": "initial",
+      "sender": {
+        "ref": "SSD-W001#sender", "role": "sender", "carrier": "SSD",
+        "display": "张代发", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "SSD-W001#receiver", "role": "receiver_nick", "carrier": "SSD",
+        "display": "城北老李", "phone": "13800000099", "address_code": "AD-21"
+      },
+      "pickup_outlet": {
+        "ref": "SSD-OUT-12", "role": "pickup_outlet", "carrier": "SSD",
+        "display": "东风路营业点", "outlet_code": "SSD-OUT-12"
+      },
+      "parcel_ids": ["P-1", "P-2"],
+      "event_time": "2026-03-01T08:00:00+08:00",
+      "recorded_at": "2026-03-12T15:00:00+08:00",
+      "receipt_id": "RC-SSD-W001",
+      "note": "面单列示揽收网点为东风路营业点"
+    },
+    {
+      "waybill_no": "SSD-W001",
+      "carrier": "SSD",
+      "version_no": 2,
+      "revision_reason": "late_correction",
+      "sender": {
+        "ref": "SSD-W001#sender", "role": "sender", "carrier": "SSD",
+        "display": "张代发", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "SSD-W001#receiver", "role": "receiver_nick", "carrier": "SSD",
+        "display": "城北老李", "phone": "13800000099", "address_code": "AD-21"
+      },
+      "pickup_outlet": {
+        "ref": "SSD-OUT-09", "role": "pickup_outlet", "carrier": "SSD",
+        "display": "城郊工业园营业点", "outlet_code": "SSD-OUT-09"
+      },
+      "parcel_ids": ["P-1", "P-2"],
+      "event_time": "2026-03-01T08:00:00+08:00",
+      "recorded_at": "2026-03-20T10:30:00+08:00",
+      "receipt_id": "RC-SSD-W001",
+      "note": "承运方晚到更正：实际揽收网点为城郊工业园营业点，首版轨迹保留"
+    },
+    {
+      "waybill_no": "SSD-W001",
+      "carrier": "SSD",
+      "version_no": 3,
+      "revision_reason": "partial_sign",
+      "sender": {
+        "ref": "SSD-W001#sender", "role": "sender", "carrier": "SSD",
+        "display": "张代发", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "SSD-W001#receiver", "role": "receiver_nick", "carrier": "SSD",
+        "display": "城北老李", "phone": "13800000099", "address_code": "AD-21"
+      },
+      "pickup_outlet": {
+        "ref": "SSD-OUT-09", "role": "pickup_outlet", "carrier": "SSD",
+        "display": "城郊工业园营业点", "outlet_code": "SSD-OUT-09"
+      },
+      "parcel_ids": ["P-1"],
+      "event_time": "2026-03-03T16:00:00+08:00",
+      "recorded_at": "2026-03-12T15:00:00+08:00",
+      "receipt_id": "RC-SSD-W001",
+      "note": "仅 P-1 签收；P-2 残件下落不明，原两件轨迹保留"
+    },
+    {
+      "waybill_no": "JYT-W002",
+      "carrier": "JYT",
+      "version_no": 1,
+      "revision_reason": "initial",
+      "sender": {
+        "ref": "JYT-W002#sender", "role": "sender", "carrier": "JYT",
+        "display": "李姐代购", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "JYT-W002#receiver", "role": "receiver_nick", "carrier": "JYT",
+        "display": "南川代转仓", "address_code": "AD-55"
+      },
+      "pickup_outlet": {
+        "ref": "JYT-OUT-07", "role": "pickup_outlet", "carrier": "JYT",
+        "display": "临川北站营业点", "outlet_code": "JYT-OUT-07"
+      },
+      "parcel_ids": ["P-3"],
+      "event_time": "2026-03-01T09:00:00+08:00",
+      "recorded_at": "2026-03-13T11:00:00+08:00",
+      "receipt_id": "RC-JYT-W002"
+    },
+    {
+      "waybill_no": "JYT-W002",
+      "carrier": "JYT",
+      "version_no": 2,
+      "revision_reason": "forward",
+      "sender": {
+        "ref": "JYT-W002#sender", "role": "sender", "carrier": "JYT",
+        "display": "李姐代购", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "JYT-W002#receiver", "role": "receiver_nick", "carrier": "JYT",
+        "display": "南川代转仓", "address_code": "AD-55"
+      },
+      "pickup_outlet": {
+        "ref": "JYT-OUT-07", "role": "pickup_outlet", "carrier": "JYT",
+        "display": "临川北站营业点", "outlet_code": "JYT-OUT-07"
+      },
+      "parcel_ids": ["P-3"],
+      "event_time": "2026-03-02T18:00:00+08:00",
+      "recorded_at": "2026-03-13T11:00:00+08:00",
+      "receipt_id": "RC-JYT-W002",
+      "note": "南川中转后转寄西林省，换开 JYT-W003；本段原轨迹保留"
+    },
+    {
+      "waybill_no": "JYT-W003",
+      "carrier": "JYT",
+      "version_no": 1,
+      "revision_reason": "initial",
+      "sender": {
+        "ref": "JYT-W003#sender", "role": "sender", "carrier": "JYT",
+        "display": "南川代转仓", "address_code": "AD-55"
+      },
+      "receiver": {
+        "ref": "JYT-W003#receiver", "role": "receiver_nick", "carrier": "JYT",
+        "display": "城北老李", "phone": "13800000055", "address_code": "AD-21"
+      },
+      "pickup_outlet": {
+        "ref": "JYT-OUT-31", "role": "pickup_outlet", "carrier": "JYT",
+        "display": "南川转运中心", "outlet_code": "JYT-OUT-31"
+      },
+      "parcel_ids": ["P-3"],
+      "event_time": "2026-03-02T20:00:00+08:00",
+      "recorded_at": "2026-03-13T11:30:00+08:00",
+      "receipt_id": "RC-JYT-W003"
+    },
+    {
+      "waybill_no": "JYT-W003",
+      "carrier": "JYT",
+      "version_no": 2,
+      "revision_reason": "refusal",
+      "sender": {
+        "ref": "JYT-W003#sender", "role": "sender", "carrier": "JYT",
+        "display": "南川代转仓", "address_code": "AD-55"
+      },
+      "receiver": {
+        "ref": "JYT-W003#receiver", "role": "receiver_nick", "carrier": "JYT",
+        "display": "城北老李", "phone": "13800000055", "address_code": "AD-21"
+      },
+      "pickup_outlet": {
+        "ref": "JYT-OUT-31", "role": "pickup_outlet", "carrier": "JYT",
+        "display": "南川转运中心", "outlet_code": "JYT-OUT-31"
+      },
+      "parcel_ids": ["P-3"],
+      "event_time": "2026-03-03T17:00:00+08:00",
+      "recorded_at": "2026-03-13T11:30:00+08:00",
+      "receipt_id": "RC-JYT-W003",
+      "note": "合箱派送后收件方拒收；合箱与运输原轨迹保留"
+    },
+    {
+      "waybill_no": "SSD-W005",
+      "carrier": "SSD",
+      "version_no": 1,
+      "revision_reason": "initial",
+      "sender": {
+        "ref": "SSD-W005#sender", "role": "sender", "carrier": "SSD",
+        "display": "张代发", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "SSD-W005#receiver", "role": "receiver_nick", "carrier": "SSD",
+        "display": "（留仓）", "address_code": "AD-9"
+      },
+      "pickup_outlet": {
+        "ref": "SSD-OUT-09", "role": "pickup_outlet", "carrier": "SSD",
+        "display": "城郊工业园营业点", "outlet_code": "SSD-OUT-09"
+      },
+      "parcel_ids": ["P-4"],
+      "event_time": "2026-03-01T08:30:00+08:00",
+      "recorded_at": "2026-03-12T15:10:00+08:00",
+      "receipt_id": "RC-SSD-W005"
+    },
+    {
+      "waybill_no": "SSD-W005",
+      "carrier": "SSD",
+      "version_no": 2,
+      "revision_reason": "cancellation",
+      "sender": {
+        "ref": "SSD-W005#sender", "role": "sender", "carrier": "SSD",
+        "display": "张代发", "phone": "13800000001", "address_code": "AD-9"
+      },
+      "receiver": {
+        "ref": "SSD-W005#receiver", "role": "receiver_nick", "carrier": "SSD",
+        "display": "（留仓）", "address_code": "AD-9"
+      },
+      "pickup_outlet": {
+        "ref": "SSD-OUT-09", "role": "pickup_outlet", "carrier": "SSD",
+        "display": "城郊工业园营业点", "outlet_code": "SSD-OUT-09"
+      },
+      "parcel_ids": ["P-4"],
+      "event_time": "2026-03-01T11:00:00+08:00",
+      "recorded_at": "2026-03-12T15:10:00+08:00",
+      "receipt_id": "RC-SSD-W005",
+      "note": "发现包裹异常，运单注销，P-4 留仓；原轨迹保留"
+    }
+  ],
+  "weights": [
+    {"parcel_id": "P-1", "waybill_no": "SSD-W001", "node_code": "SSD-OUT-09", "weight_kg": 2.00, "event_time": "2026-03-01T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"parcel_id": "P-1", "waybill_no": "SSD-W001", "node_code": "SSD-WZ-XL", "weight_kg": 2.05, "event_time": "2026-03-03T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"parcel_id": "P-2", "waybill_no": "SSD-W001", "node_code": "SSD-OUT-09", "weight_kg": 3.00, "event_time": "2026-03-01T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"parcel_id": "P-2", "waybill_no": "SSD-W001", "node_code": "SSD-WZ-XL", "weight_kg": 3.02, "event_time": "2026-03-03T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"parcel_id": "P-3", "waybill_no": "JYT-W002", "node_code": "JYT-OUT-07", "weight_kg": 1.50, "event_time": "2026-03-01T09:00:00+08:00", "recorded_at": "2026-03-13T11:00:00+08:00", "receipt_id": "RC-JYT-W002"},
+    {"parcel_id": "P-3", "waybill_no": "JYT-W002", "node_code": "JYT-WZ-NC", "weight_kg": 1.50, "event_time": "2026-03-02T12:00:00+08:00", "recorded_at": "2026-03-13T11:00:00+08:00", "receipt_id": "RC-JYT-W002"},
+    {"parcel_id": "P-4", "waybill_no": "SSD-W005", "node_code": "SSD-OUT-09", "weight_kg": 1.00, "event_time": "2026-03-01T08:30:00+08:00", "recorded_at": "2026-03-12T15:10:00+08:00", "receipt_id": "RC-SSD-W005"},
+    {"parcel_id": "P-4", "waybill_no": "SSD-W005", "node_code": "SSD-WZ-LC", "weight_kg": 1.80, "event_time": "2026-03-01T10:00:00+08:00", "recorded_at": "2026-03-12T15:10:00+08:00", "receipt_id": "RC-SSD-W005"}
+  ],
+  "box_events": [
+    {
+      "box_code": "BOX-7",
+      "action": "packed",
+      "parcel_ids": ["P-1", "P-2", "P-3", "P-4"],
+      "waybill_nos": ["JYT-W002", "SSD-W001", "SSD-W005"],
+      "province": "东江省",
+      "event_time": "2026-03-01T06:00:00+08:00",
+      "recorded_at": "2026-03-13T11:20:00+08:00",
+      "receipt_id": "RC-JYT-BOX",
+      "note": "归集仓库装箱：一箱药四件"
+    },
+    {
+      "box_code": "BOX-7",
+      "action": "split",
+      "parcel_ids": ["P-1", "P-2", "P-3"],
+      "waybill_nos": ["JYT-W002", "SSD-W001"],
+      "province": "东江省",
+      "event_time": "2026-03-01T07:30:00+08:00",
+      "recorded_at": "2026-03-13T11:20:00+08:00",
+      "receipt_id": "RC-JYT-BOX",
+      "note": "拆成多件快递分两家承运方外发；P-4 留仓后随 SSD-W005 注销"
+    },
+    {
+      "box_code": "BOX-9",
+      "action": "merged",
+      "parcel_ids": ["P-1", "P-2", "P-3"],
+      "waybill_nos": ["SSD-W001", "JYT-W003"],
+      "province": "西林省",
+      "event_time": "2026-03-03T10:00:00+08:00",
+      "recorded_at": "2026-03-13T11:30:00+08:00",
+      "receipt_id": "RC-JYT-W003",
+      "note": "两件外省快递在西林省再次合箱"
+    }
+  ],
+  "vehicle_batches": [
+    {
+      "batch_no": "SSD-V-01",
+      "carrier": "SSD",
+      "vehicle_code": "SSD-挂车-虚构7726",
+      "origin_province": "东江省",
+      "dest_province": "西林省",
+      "departed_at": "2026-03-01T19:00:00+08:00",
+      "arrived_at": "2026-03-02T16:00:00+08:00",
+      "waybill_nos": ["SSD-W001"],
+      "receipt_id": "RC-SSD-W001"
+    },
+    {
+      "batch_no": "JYT-V-02",
+      "carrier": "JYT",
+      "vehicle_code": "JYT-厢车-虚构3301",
+      "origin_province": "东江省",
+      "dest_province": "南川省",
+      "departed_at": "2026-03-01T18:30:00+08:00",
+      "arrived_at": "2026-03-02T12:00:00+08:00",
+      "waybill_nos": ["JYT-W002"],
+      "receipt_id": "RC-JYT-W002"
+    },
+    {
+      "batch_no": "JYT-V-03",
+      "carrier": "JYT",
+      "vehicle_code": "JYT-厢车-虚构3318",
+      "origin_province": "南川省",
+      "dest_province": "西林省",
+      "departed_at": "2026-03-02T20:30:00+08:00",
+      "arrived_at": "2026-03-03T07:00:00+08:00",
+      "waybill_nos": ["JYT-W003"],
+      "receipt_id": "RC-JYT-W003"
+    }
+  ],
+  "scans": [
+    {"scan_id": "SC-1", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": "P-1", "node_code": "SSD-OUT-09", "province": "东江省", "scan_type": "accepted", "event_time": "2026-03-01T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"scan_id": "SC-2", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": "P-2", "node_code": "SSD-OUT-09", "province": "东江省", "scan_type": "accepted", "event_time": "2026-03-01T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"scan_id": "SC-3", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": null, "node_code": "SSD-WZ-LC", "province": "东江省", "scan_type": "in_transit", "event_time": "2026-03-01T19:30:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001", "vehicle_batch_no": "SSD-V-01"},
+    {"scan_id": "SC-4", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": null, "node_code": "SSD-WZ-XL", "province": "西林省", "scan_type": "transfer", "event_time": "2026-03-02T16:30:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001", "vehicle_batch_no": "SSD-V-01"},
+    {"scan_id": "SC-5", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": null, "node_code": "SSD-OUT-XL02", "province": "西林省", "scan_type": "arrived", "event_time": "2026-03-03T08:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"scan_id": "SC-6", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": null, "node_code": "SSD-OUT-XL02", "province": "西林省", "scan_type": "merge", "event_time": "2026-03-03T10:00:00+08:00", "recorded_at": "2026-03-13T11:30:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"scan_id": "SC-7", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": null, "node_code": "SSD-OUT-XL02", "province": "西林省", "scan_type": "out_for_delivery", "event_time": "2026-03-03T13:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+    {"scan_id": "SC-8", "waybill_no": "SSD-W001", "carrier": "SSD", "parcel_id": "P-1", "node_code": "SSD-OUT-XL02", "province": "西林省", "scan_type": "partial_signed", "event_time": "2026-03-03T16:00:00+08:00", "recorded_at": "2026-03-12T15:00:00+08:00", "receipt_id": "RC-SSD-W001"},
+
+    {"scan_id": "SC-9", "waybill_no": "JYT-W002", "carrier": "JYT", "parcel_id": "P-3", "node_code": "JYT-OUT-07", "province": "东江省", "scan_type": "accepted", "event_time": "2026-03-01T09:00:00+08:00", "recorded_at": "2026-03-13T11:00:00+08:00", "receipt_id": "RC-JYT-W002"},
+    {"scan_id": "SC-10", "waybill_no": "JYT-W002", "carrier": "JYT", "parcel_id": null, "node_code": "JYT-WZ-NC", "province": "南川省", "scan_type": "transfer", "event_time": "2026-03-02T12:30:00+08:00", "recorded_at": "2026-03-13T11:00:00+08:00", "receipt_id": "RC-JYT-W002", "vehicle_batch_no": "JYT-V-02"},
+    {"scan_id": "SC-11", "waybill_no": "JYT-W002", "carrier": "JYT", "parcel_id": "P-3", "node_code": "JYT-WZ-NC", "province": "南川省", "scan_type": "forwarded", "event_time": "2026-03-02T18:00:00+08:00", "recorded_at": "2026-03-13T11:00:00+08:00", "receipt_id": "RC-JYT-W002"},
+
+    {"scan_id": "SC-12", "waybill_no": "JYT-W003", "carrier": "JYT", "parcel_id": "P-3", "node_code": "JYT-OUT-31", "province": "南川省", "scan_type": "accepted", "event_time": "2026-03-02T20:00:00+08:00", "recorded_at": "2026-03-13T11:30:00+08:00", "receipt_id": "RC-JYT-W003"},
+    {"scan_id": "SC-13", "waybill_no": "JYT-W003", "carrier": "JYT", "parcel_id": null, "node_code": "JYT-WZ-XL", "province": "西林省", "scan_type": "arrived", "event_time": "2026-03-03T07:30:00+08:00", "recorded_at": "2026-03-13T11:30:00+08:00", "receipt_id": "RC-JYT-W003", "vehicle_batch_no": "JYT-V-03"},
+    {"scan_id": "SC-14", "waybill_no": "JYT-W003", "carrier": "JYT", "parcel_id": null, "node_code": "SSD-OUT-XL02", "province": "西林省", "scan_type": "merge", "event_time": "2026-03-03T10:00:00+08:00", "recorded_at": "2026-03-13T11:30:00+08:00", "receipt_id": "RC-JYT-W003"},
+    {"scan_id": "SC-15", "waybill_no": "JYT-W003", "carrier": "JYT", "parcel_id": "P-3", "node_code": "SSD-OUT-XL02", "province": "西林省", "scan_type": "refused", "event_time": "2026-03-03T17:00:00+08:00", "recorded_at": "2026-03-13T11:30:00+08:00", "receipt_id": "RC-JYT-W003"},
+
+    {"scan_id": "SC-16", "waybill_no": "SSD-W005", "carrier": "SSD", "parcel_id": "P-4", "node_code": "SSD-OUT-09", "province": "东江省", "scan_type": "accepted", "event_time": "2026-03-01T08:30:00+08:00", "recorded_at": "2026-03-12T15:10:00+08:00", "receipt_id": "RC-SSD-W005"},
+    {"scan_id": "SC-17", "waybill_no": "SSD-W005", "carrier": "SSD", "parcel_id": "P-4", "node_code": "SSD-OUT-09", "province": "东江省", "scan_type": "cancelled", "event_time": "2026-03-01T11:00:00+08:00", "recorded_at": "2026-03-12T15:10:00+08:00", "receipt_id": "RC-SSD-W005"}
+  ],
+  "seeds": [
+    {
+      "sale_id": "sale-2026-001",
+      "listing_nick": "安康药代",
+      "buyer_nick": "城北老李",
+      "event_time": "2026-03-01T05:30:00+08:00",
+      "waybill_no": "SSD-W001",
+      "parcel_id": "P-1",
+      "note": "网络售药发货记录（虚构），倒查起点"
+    }
+  ]
+}
