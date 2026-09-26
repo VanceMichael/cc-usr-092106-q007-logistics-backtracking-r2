@@ -1,0 +1,132 @@
+{
+  "domain": "logistics-backtracking",
+  "version": 1,
+  "case_id": "case-007",
+  "subjects": [
+    {"id": "s1", "label": "归集仓库管库人（面单昵称：阿强）", "note": "虚构"},
+    {"id": "s2", "label": "武汉中转线头（面单昵称：阿梅）", "note": "虚构"},
+    {"id": "s3", "label": "东莞代收点（昵称：阿坤）", "note": "虚构"},
+    {"id": "s4", "label": "网络购药人（昵称：追风）", "note": "虚构"}
+  ],
+  "contacts": [
+    {"id": "c1", "phone_masked": "138****0001", "platform": "面单手机号", "note": "虚构"},
+    {"id": "c2", "phone_masked": "139****0002", "platform": "面单手机号", "note": "虚构"},
+    {"id": "c3", "phone_masked": "137****0003", "platform": "电商预留号", "note": "虚构"}
+  ],
+  "addresses": [
+    {"id": "addr1", "code": "HN-CS-WH-01", "province": "湖南", "city": "长沙", "detail_masked": "某物流园*栋"},
+    {"id": "addr2", "code": "HB-WH-HK-02", "province": "湖北", "city": "武汉", "detail_masked": "汉口某市场*号"},
+    {"id": "addr3", "code": "HB-WH-HK-03", "province": "湖北", "city": "武汉", "detail_masked": "汉口某小区*栋"},
+    {"id": "addr4", "code": "GD-DG-CP-04", "province": "广东", "city": "东莞", "detail_masked": "常平某代收点"},
+    {"id": "addr5", "code": "GD-FS-CC-05", "province": "广东", "city": "佛山", "detail_masked": "禅城某档口"},
+    {"id": "addr6", "code": "HN-CS-YH-06", "province": "湖南", "city": "长沙", "detail_masked": "雨花某门面"}
+  ],
+  "nodes": [
+    {"id": "n-hn-cs-sf", "carrier": "SF虚构速运", "code": "HN-A-01", "name": "长沙某揽收网点", "province": "湖南", "city": "长沙"},
+    {"id": "n-hb-wh-sf", "carrier": "SF虚构速运", "code": "HB-W-01", "name": "武汉某中转场", "province": "湖北", "city": "武汉"},
+    {"id": "n-gd-sz-sf", "carrier": "SF虚构速运", "code": "GD-S-01", "name": "深圳某派送网点", "province": "广东", "city": "深圳"},
+    {"id": "n-hb-wh-yt", "carrier": "YT虚构快运", "code": "HB-W-02", "name": "武汉某揽收网点", "province": "湖北", "city": "武汉"},
+    {"id": "n-gd-sz-yt", "carrier": "YT虚构快运", "code": "GD-S-02", "name": "深圳某转运场", "province": "广东", "city": "深圳"},
+    {"id": "n-gd-dg-yt", "carrier": "YT虚构快运", "code": "GD-D-01", "name": "东莞某派送网点", "province": "广东", "city": "东莞"},
+    {"id": "n-hb-wh-zt", "carrier": "ZT虚构快递", "code": "HB-W-03", "name": "武汉某揽收网点", "province": "湖北", "city": "武汉"},
+    {"id": "n-gd-fs-zt", "carrier": "ZT虚构快递", "code": "GD-F-01", "name": "佛山某派送网点", "province": "广东", "city": "佛山"},
+    {"id": "n-gd-fs-zt2", "carrier": "ZT虚构快递", "code": "GD-F-02", "name": "佛山转寄后派送网点", "province": "广东", "city": "佛山"},
+    {"id": "n-gd-sz-db", "carrier": "DB虚构同城配", "code": "GD-S-06", "name": "深圳某同城站点", "province": "广东", "city": "深圳"}
+  ],
+  "vehicle_batches": [
+    {"id": "b1", "carrier": "SF虚构速运", "batch_no": "湘A-货-0301", "depart_at": "2026-03-01T20:30:00", "from_node_id": "n-hn-cs-sf", "to_node_id": "n-hb-wh-sf", "crosses_province": true},
+    {"id": "b2", "carrier": "YT虚构快运", "batch_no": "鄂A-货-0302", "depart_at": "2026-03-02T12:00:00", "from_node_id": "n-hb-wh-yt", "to_node_id": "n-gd-sz-yt", "crosses_province": true},
+    {"id": "b3", "carrier": "ZT虚构快递", "batch_no": "鄂A-客-0302", "depart_at": "2026-03-02T13:00:00", "from_node_id": "n-hb-wh-zt", "to_node_id": "n-gd-fs-zt", "crosses_province": true},
+    {"id": "b4", "carrier": "SF虚构速运", "batch_no": "鄂A-航-0302", "depart_at": "2026-03-02T14:00:00", "from_node_id": "n-hb-wh-sf", "to_node_id": "n-gd-sz-sf", "crosses_province": true}
+  ],
+  "pieces": [
+    {"id": "p1", "description": "虚构处方中成药×若干", "weight_g": 500, "medicine_lot": "LOT-X-001", "from_sale_id": "sale-001"},
+    {"id": "p2", "description": "虚构处方药×若干", "weight_g": 400, "medicine_lot": "LOT-X-002", "from_sale_id": "sale-001"},
+    {"id": "p3", "description": "虚构保健类药品×若干", "weight_g": 600, "medicine_lot": "LOT-X-003", "from_sale_id": "sale-001"}
+  ],
+  "boxes": [
+    {"id": "box-1", "weight_g": 1500, "note": "归集仓库出库整箱（含 p1/p2/p3，含包装）"}
+  ],
+  "sales": [
+    {"id": "sale-001", "at": "2026-03-01T07:30:00", "buyer_nick": "追风", "piece_ids": ["p1", "p2", "p3"]}
+  ],
+  "authorizations": [
+    {"id": "auth-sf-01", "carrier": "SF虚构速运", "granted_by": "虚构调证单位A", "granted_at": "2026-03-05T09:00:00", "scope_waybill_ids": ["w1", "w4"], "scope_node_ids": ["n-hn-cs-sf", "n-hb-wh-sf", "n-gd-sz-sf"], "expires_at": "2026-12-31T00:00:00"},
+    {"id": "auth-yt-01", "carrier": "YT虚构快运", "granted_by": "虚构调证单位B", "granted_at": "2026-03-05T09:00:00", "scope_waybill_ids": ["w2"], "scope_node_ids": ["n-hb-wh-yt", "n-gd-sz-yt"], "expires_at": "2026-12-31T00:00:00"},
+    {"id": "auth-zt-01", "carrier": "ZT虚构快递", "granted_by": "虚构调证单位C", "granted_at": "2026-03-05T09:00:00", "scope_waybill_ids": ["w3"], "scope_node_ids": ["n-hb-wh-zt", "n-gd-fs-zt"], "expires_at": "2026-12-31T00:00:00"}
+  ],
+  "waybills": [
+    {
+      "id": "w1",
+      "events": [
+        {"seq": 1, "type": "registered", "at": "2026-03-01T08:00:00", "source": "SF底单(虚构)",
+         "payload": {"carrier": "SF虚构速运", "sender_name": "阿强", "sender_subject_id": "s1", "sender_contact_id": "c1", "sender_address_id": "addr1", "pickup_node_id": "n-hn-cs-sf", "receiver_name": "阿梅", "receiver_subject_id": "s2", "receiver_contact_id": "c2", "receiver_address_id": "addr2", "item_description": "药品整箱", "declared_weight_g": 1500}},
+        {"seq": 2, "type": "packed", "at": "2026-03-01T08:10:00", "source": "仓库出库登记(虚构)", "payload": {"box_id": "box-1", "piece_ids": ["p1", "p2", "p3"]}},
+        {"seq": 3, "type": "scan", "at": "2026-03-01T08:20:00", "source": "SF扫描流水(虚构)", "payload": {"node_id": "n-hn-cs-sf", "kind": "accepted"}},
+        {"seq": 4, "type": "scan", "at": "2026-03-01T20:00:00", "source": "SF扫描流水(虚构)", "payload": {"node_id": "n-hn-cs-sf", "kind": "departed"}},
+        {"seq": 5, "type": "vehicle_batch", "at": "2026-03-01T20:30:00", "source": "SF车次清单(虚构)", "payload": {"batch_id": "b1"}},
+        {"seq": 6, "type": "scan", "at": "2026-03-02T06:00:00", "source": "SF扫描流水(虚构)", "payload": {"node_id": "n-hb-wh-sf", "kind": "arrived"}},
+        {"seq": 7, "type": "unpacked", "at": "2026-03-02T08:00:00", "source": "武汉线头拆箱登记(虚构)", "payload": {"piece_ids": ["p1", "p2", "p3"]}}
+      ]
+    },
+    {
+      "id": "w2",
+      "events": [
+        {"seq": 1, "type": "registered", "at": "2026-03-02T09:00:00", "source": "YT底单(虚构)",
+         "payload": {"carrier": "YT虚构快运", "sender_name": "阿梅", "sender_subject_id": "s2", "sender_contact_id": "c1", "sender_address_id": "addr2", "pickup_node_id": "n-hb-wh-yt", "receiver_name": "追风", "receiver_subject_id": "s4", "receiver_contact_id": "c3", "receiver_address_id": "addr4", "item_description": "药品一件", "declared_weight_g": 600}},
+        {"seq": 2, "type": "packed", "at": "2026-03-02T09:10:00", "source": "武汉线头交接登记(虚构)", "payload": {"piece_ids": ["p1"]}},
+        {"seq": 3, "type": "scan", "at": "2026-03-02T09:30:00", "source": "YT扫描流水(虚构)", "payload": {"node_id": "n-hb-wh-yt", "kind": "accepted"}},
+        {"seq": 4, "type": "vehicle_batch", "at": "2026-03-02T12:00:00", "source": "YT车次清单(虚构)", "payload": {"batch_id": "b2"}},
+        {"seq": 5, "type": "scan", "at": "2026-03-03T05:00:00", "source": "YT扫描流水(虚构)", "payload": {"node_id": "n-gd-sz-yt", "kind": "arrived"}},
+        {"seq": 6, "type": "scan", "at": "2026-03-03T08:00:00", "source": "YT扫描流水(虚构)", "payload": {"node_id": "n-gd-dg-yt", "kind": "out_delivery"}},
+        {"seq": 7, "type": "correction", "at": "2026-03-03T09:00:00", "source": "YT晚到更正(虚构)", "payload": {"query_id": "q-yt-1", "reason": "承运方复核称重"}, "fields": {"declared_weight_g": 500}},
+        {"seq": 8, "type": "query_receipt", "at": "2026-03-03T09:05:00", "source": "YT查询回执(虚构)", "payload": {"query_id": "q-yt-1", "status": "confirmed", "note": "复核重量500g"}}
+      ]
+    },
+    {
+      "id": "w3",
+      "events": [
+        {"seq": 1, "type": "registered", "at": "2026-03-02T09:05:00", "source": "ZT底单(虚构)",
+         "payload": {"carrier": "ZT虚构快递", "sender_name": "阿梅", "sender_subject_id": "s2", "sender_contact_id": "c2", "sender_address_id": "addr3", "pickup_node_id": "n-hb-wh-zt", "receiver_name": "佛山陈生", "receiver_contact_id": "c3", "receiver_address_id": "addr5", "item_description": "药品一件"}},
+        {"seq": 2, "type": "packed", "at": "2026-03-02T09:15:00", "source": "武汉线头交接登记(虚构)", "payload": {"piece_ids": ["p2"]}},
+        {"seq": 3, "type": "scan", "at": "2026-03-02T09:40:00", "source": "ZT扫描流水(虚构)", "payload": {"node_id": "n-hb-wh-zt", "kind": "accepted"}},
+        {"seq": 4, "type": "correction", "at": "2026-03-02T10:00:00", "source": "ZT口头更正(虚构)", "payload": {"reason": "揽收员回传面单姓名订正"}, "fields": {"sender_name": "阿梅(武汉)"}},
+        {"seq": 5, "type": "vehicle_batch", "at": "2026-03-02T13:00:00", "source": "ZT车次清单(虚构)", "payload": {"batch_id": "b3"}},
+        {"seq": 6, "type": "scan", "at": "2026-03-03T07:00:00", "source": "ZT扫描流水(虚构)", "payload": {"node_id": "n-gd-fs-zt", "kind": "arrived"}},
+        {"seq": 7, "type": "forwarded", "at": "2026-03-03T10:00:00", "source": "ZT转寄申请(虚构)", "payload": {"to_waybill_id": "w5", "reason": "收件人要求改址"}}
+      ]
+    },
+    {
+      "id": "w5",
+      "events": [
+        {"seq": 1, "type": "registered", "at": "2026-03-03T10:05:00", "source": "ZT转寄底单(虚构)",
+         "payload": {"carrier": "ZT虚构快递", "sender_name": "阿梅(武汉)", "sender_contact_id": "c2", "sender_address_id": "addr3", "pickup_node_id": "n-gd-fs-zt2", "receiver_name": "佛山陈生", "receiver_contact_id": "c3", "receiver_address_id": "addr5", "item_description": "转寄药品一件"}},
+        {"seq": 2, "type": "scan", "at": "2026-03-03T13:00:00", "source": "ZT扫描流水(虚构)", "payload": {"node_id": "n-gd-fs-zt2", "kind": "arrived"}},
+        {"seq": 3, "type": "scan", "at": "2026-03-03T14:00:00", "source": "ZT扫描流水(虚构)", "payload": {"node_id": "n-gd-fs-zt2", "kind": "out_delivery"}},
+        {"seq": 4, "type": "rejected", "at": "2026-03-04T11:00:00", "source": "ZT拒收记录(虚构)", "payload": {"reason": "收件人拒收"}}
+      ]
+    },
+    {
+      "id": "w4",
+      "events": [
+        {"seq": 1, "type": "registered", "at": "2026-03-02T09:10:00", "source": "SF底单(虚构)",
+         "payload": {"carrier": "SF虚构速运", "sender_name": "阿梅", "sender_subject_id": "s2", "sender_contact_id": "c2", "sender_address_id": "addr6", "pickup_node_id": "n-hb-wh-sf", "receiver_name": "追风", "receiver_contact_id": "c3", "receiver_address_id": "addr4", "item_description": "药品一件", "declared_weight_g": 600}},
+        {"seq": 2, "type": "packed", "at": "2026-03-02T09:20:00", "source": "武汉线头交接登记(虚构)", "payload": {"piece_ids": ["p3"]}},
+        {"seq": 3, "type": "scan", "at": "2026-03-02T10:00:00", "source": "SF扫描流水(虚构)", "payload": {"node_id": "n-hb-wh-sf", "kind": "accepted"}},
+        {"seq": 4, "type": "vehicle_batch", "at": "2026-03-02T14:00:00", "source": "SF车次清单(虚构)", "payload": {"batch_id": "b4"}},
+        {"seq": 5, "type": "scan", "at": "2026-03-03T06:00:00", "source": "SF扫描流水(虚构)", "payload": {"node_id": "n-gd-sz-sf", "kind": "arrived"}}
+      ]
+    },
+    {
+      "id": "w6",
+      "events": [
+        {"seq": 1, "type": "registered", "at": "2026-03-03T13:00:00", "source": "DB底单(虚构)",
+         "payload": {"carrier": "DB虚构同城配", "sender_name": "阿坤", "sender_subject_id": "s3", "sender_contact_id": "c3", "sender_address_id": "addr4", "pickup_node_id": "n-gd-sz-db", "receiver_name": "追风", "receiver_contact_id": "c3", "receiver_address_id": "addr4", "item_description": "合并药品两件", "declared_weight_g": 1100}},
+        {"seq": 2, "type": "merged", "at": "2026-03-03T14:00:00", "source": "代收点合并登记(虚构)", "payload": {"piece_ids": ["p1", "p3"]}},
+        {"seq": 3, "type": "scan", "at": "2026-03-03T14:30:00", "source": "DB扫描流水(虚构)", "payload": {"node_id": "n-gd-sz-db", "kind": "accepted"}},
+        {"seq": 4, "type": "scan", "at": "2026-03-03T15:00:00", "source": "DB扫描流水(虚构)", "payload": {"node_id": "n-gd-sz-db", "kind": "out_delivery"}},
+        {"seq": 5, "type": "partially_signed", "at": "2026-03-03T18:00:00", "source": "DB签收记录(虚构)", "payload": {"signed_piece_ids": ["p1"], "note": "仅签收一件，另一件退回代收点"}}
+      ]
+    }
+  ]
+}
